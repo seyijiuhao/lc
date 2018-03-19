@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+class solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+            """
+        li = []
+        dicts = {}
+        for index in range(len(nums)):
+            t = target - nums[index]
+            if t in dicts:
+                li.append(dicts[t])
+                li.append(index)
+                return li
+            else:
+                dicts[nums[index]] = index
+nums = [3,2,3]
+target = 6
+print(solution().twoSum(nums,target))
